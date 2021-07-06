@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p, h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+#phone-container {
+    width: 292.5px;
+    height: 633px;
+    border-radius: calc(292.5 * 0.1);
+    border: 1px solid #ccc;
+}
+
+#phone-status-bar{
+    width: 100%;
+    height: 44px;
+    background-color: #777;
+}

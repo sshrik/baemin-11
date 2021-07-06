@@ -1,0 +1,15 @@
+doctype html
+head 
+    style
+        include ../public/stylesheets/common.css
+body 
+    div#phone-container
+        div#phone-status-bar
+            p status-bar area
+        include components/SubHeader.pug
+        include components/LoginForm.pug
+        include SocialLoginContainer.pug
+        div#sign-up-container
+            div
+                p 혹시, 배달의 민족이 처음이신가요?
+            include components/TextButton.pug ("회원가입")    
