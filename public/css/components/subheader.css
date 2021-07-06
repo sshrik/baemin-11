@@ -1,0 +1,35 @@
+.sub-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 0px;
+  flex-basis: 16px;
+}
+
+.sub-header > div{
+  display:flex;
+  align-items: center;
+  flex: 1;
+}
+
+.sub-header > .header__left{
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+.sub-header > .header__left > img{
+  width: 1em;
+}
+
+.sub-header > .header__center{
+  justify-content: center;
+}
+
+.sub-header > .header__right{
+  justify-content: flex-end;
+}
+
+/* .header__right > .active{}
+
+.header__right > .disable{} */
