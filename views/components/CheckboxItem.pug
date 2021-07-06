@@ -1,0 +1,8 @@
+mixin Checkbox(id, name, label, isIcon)
+  div(class="checkbox-item")
+    div(class="checkbox-input")
+      input(type="checkbox", name= name, id= id)/
+      label(for= id)= label
+    if isIcon
+      div(class="checkbox-more-btn")
+        img(src="/images/chevron-forward.svg", alt="chevron-forward")

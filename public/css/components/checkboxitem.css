@@ -1,0 +1,28 @@
+.checkbox-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkbox-item > div{
+  display: flex;
+  align-items: center;
+  padding: 16px 0px;
+}
+
+.checkbox-input{}
+
+.checkbox-input > input{
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.checkbox-more-btn{
+  font-size: 24px;
+}
+
+.checkbox-more-btn > img{
+  color: #cfcfcf;
+  width: 1em;
+}
