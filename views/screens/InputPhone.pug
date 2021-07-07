@@ -1,0 +1,23 @@
+extends ../Layout.pug
+include ../components/StatusBar.pug
+include ../components/SubHeader.pug
+include ../components/LoginForm.pug
+include ../components/TextButton.pug
+include ../components/SocialLoginContainer.pug
+
+block styles
+  link(rel="stylesheet", href="/css/global.css")
+  link(rel="stylesheet", href="/css/screens/login.css")
+  link(rel="stylesheet", href="/css/components/statusbar.css")
+  link(rel="stylesheet", href="/css/components/subheader.css")
+block content
+  div(class="container")
+    +StatusBar()
+    -
+      const headerProps = {
+        leftSrc: '/resource/arrow-back.svg',
+        title: '회원가입',
+        rightText: '다음'
+      }
+    -
+    +SubHeader(headerProps)
