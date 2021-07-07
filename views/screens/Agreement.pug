@@ -1,0 +1,51 @@
+extends ../Layout.pug
+include ../components/StatusBar.pug
+include ../components/SubHeader.pug
+include ../components/CheckboxItem.pug
+include ../components/RadioItem.pug
+include ../components/Button.pug
+
+block title
+    title 약관동의화면
+
+block styles 
+    link(rel="stylesheet", href="/css/screens/agreement.css")
+    link(rel="stylesheet", href="/css/components/statusbar.css")
+    link(rel="stylesheet", href="/css/components/subheader.css")
+    link(rel="stylesheet", href="/css/components/checkboxitem.css")
+    link(rel="stylesheet", href="/css/components/radioitem.css")
+    link(rel="stylesheet", href="/css/components/button.css")
+block content
+    div(class="container")
+        +StatusBar()
+        -
+            const header = {
+                leftSrc: '/resource/close.svg',
+                title: '회원가입',
+                rightText: '다음'
+            }
+        +SubHeader(header)
+
+        div(class="h1-description")
+            h1 어서오세요
+            h1 약관동의가 필요해요
+        
+        div(class="checkbox-container")
+            div(class="checkbox-header")
+                +Checkbox('all', 'all', '전체동의', false)
+            div(class="checkbox-list")
+                +Checkbox('agree1', 'agree1' ,'배달의민족 이용약관 동의', true)
+                +Checkbox('agree2', 'agree2' ,'전자금융거래 이용약관 동의', true)
+                +Checkbox('agree3', 'agree3' ,'개안정보 이용약관 동의', true)
+                +Checkbox('agree4', 'agree4' ,'개인정보 제3자 제공 동의(선택)', true)
+                +Checkbox('agree5', 'agree5' ,'마케팅 정보 메일, SMS 수신동의(선택', false)
+        
+        div(class="radio-container")
+            +Radio('radio1', 'age', '14세 이상입니다.', '')
+            +Radio('radio2', 'age', '14세 미만입니다.', '본인확인이 된 보호자의 배민계정이 필요해요.')
+        
+        div(class="btn-container")
+            +Button('primary', 'lg', '다음으로')
+
+block scripts
+    script(src="/js/agreement.js")
