@@ -1,3 +1,11 @@
+.agreementScreen__container{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: calc(100% - 94px);
+}
+
 .h1-description{
   padding: 24px 0;
 }
@@ -16,7 +24,6 @@
 }
 
 .btn-container{
-  position: absolute;
   width:100%;
   padding: 24px var(--default-px); 
   left:0;
