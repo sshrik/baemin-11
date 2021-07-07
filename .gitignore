@@ -167,4 +167,8 @@ dist
 .history
 .ionide
 
+
+## Library Generate Files
+lib/gen/*
+
 # End of https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode,node
