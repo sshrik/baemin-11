@@ -25,3 +25,7 @@ p{
 .visible {
   visibility: visible;
 }
+
+.nonExist {
+  display: none;
+}
