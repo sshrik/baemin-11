@@ -1,0 +1,19 @@
+.btn{
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  width: 100%;
+  font-weight: 600;
+}
+
+.btn-primary{
+  background-color: #28C1BC;
+}
+
+.btn-lg{
+  height: 48px;
+}
+
+.btn-disable{
+  background-color: #E6E6E6;
+}
