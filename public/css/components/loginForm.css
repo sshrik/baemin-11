@@ -8,8 +8,22 @@
   font-size: 0.8rem;
   margin-bottom: 10px;
   border-style: none;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--bm-gray);
 }
 .loginForm > input::placeholder {
-  color: #ccc;
+  color: var(--bm-gray);;
+}
+
+.finder__container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.finder__divider {
+  height: 10px;
+  margin-left: 10px;
+  border: 0.5px solid var(--bm-gray);
 }

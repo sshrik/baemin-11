@@ -12,6 +12,7 @@ block styles
   link(rel="stylesheet", href="/css/components/subheader.css")
   link(rel="stylesheet", href="/css/components/textButton.css")
   link(rel="stylesheet", href="/css/components/loginForm.css")
+  link(rel="stylesheet", href="/css/components/primeButton.css")
   link(rel="stylesheet", href="/css/components/socialLoginButton.css")
 block content
   +StatusBar()
@@ -27,4 +28,4 @@ block content
   +SocialLoginContainer()
   div(id="signUp__container")
     p 혹시, 배달의 민족이 처음이신가요?
-    +TextButton("회원가입")
+    +TextButton("회원가입", "mint")

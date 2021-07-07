@@ -1,3 +1,10 @@
-mixin TextButton(textButtonValue)
-    div.textButtonContainer
-        p.textButtonContents #{textButtonValue}
+//- textButtonValue : text button에 들어갈 string
+//- color : mint, gray 를 선택 가능한 string.
+
+mixin TextButton(textButtonValue, color)
+    if color == "mint"
+        - var textColor = "textButton-mint"
+    else if color == "gray"
+        - var textColor = "textButton-gray"
+    div(class="textButton__container")
+        p(class=["textButton__contents", textColor]) #{textButtonValue}

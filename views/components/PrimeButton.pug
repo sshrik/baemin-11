@@ -1,0 +1,10 @@
+//- buttonCotents : 버튼에 들어갈 내용 문자열
+//- isActive : true면 민트색으로, 아니면 회색으로 배경색 정함.
+
+mixin PrimeButton(buttonCotents, isActive)
+  if isActive
+    button(class="primeButton__container primeButton-active")
+      p #{buttonCotents}
+  else
+    button(class="primeButton__container primeButton-nonActive")
+      p #{buttonCotents}
