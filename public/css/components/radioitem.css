@@ -1,0 +1,29 @@
+.radio-item{
+  display:flex;
+  align-items: center;
+  height: 60px;
+  margin: 8px 0px;
+  padding: 0px 16px;
+  background-color: #F6F6F6;
+  border-radius: 8px;
+}
+
+.radio-item > input{
+  width: 24px;
+  height: 24px; 
+  margin-right: 8px;
+}
+
+.radio-item > label{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.radio-item > label > .desc{
+}
+
+.radio-item > label > .sub-desc{
+  font-size: 12px;
+  color: #9C9C9C;
+}

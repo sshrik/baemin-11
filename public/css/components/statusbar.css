@@ -1,0 +1,15 @@
+.status-bar{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 0px;
+}
+
+/* .status-bar > .bar__left{
+}
+
+.status-bar > .bar__right{} */
+
+.status-bar > .bar__right > img{
+  margin: 0px 3px;
+}
