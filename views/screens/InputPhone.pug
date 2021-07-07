@@ -7,7 +7,7 @@ include ../components/CheckInput.pug
 
 block styles
   link(rel="stylesheet", href="/css/global.css")
-  link(rel="stylesheet", href="/css/screens/login.css")
+  link(rel="stylesheet", href="/css/screens/inputPhone.css")
   link(rel="stylesheet", href="/css/components/statusbar.css")
   link(rel="stylesheet", href="/css/components/subheader.css")
   link(rel="stylesheet", href="/css/components/checkInput.css")
@@ -22,4 +22,5 @@ block content
       }
     -
     +SubHeader(headerProps)
-    +CheckInput("휴대전화", "휴대전화 번호를 입력하세요")
+    div(id="inputPhone__container")
+      +CheckInput("휴대전화", "휴대전화 번호를 입력하세요")

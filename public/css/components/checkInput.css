@@ -1,3 +1,25 @@
 .checkInput__container {
   width: 100%;
 }
+
+.checkInput__container > p {
+  width: 100%;
+  font-size: 14px;
+  margin-bottom : 14px;
+}
+
+.checkInput__input {
+  width: 100%;
+  border-bottom: 1px solid #333;
+}
+
+.checkInput__input > input {
+  width: 100%;
+  font-size: 14px;
+  border-style: none;
+  margin-bottom : 14px;
+}
+
+.checkInput__input > input:placeholder {
+  color: var(--bm-gray);
+}

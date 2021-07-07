@@ -4,4 +4,5 @@
 mixin CheckInput(headerText, placeholderText)
   div(class="checkInput__container")
     p #{headerText}
-    input(placeholder=placeholderText)
+    div(class="checkInput__input")
+      input(placeholder=placeholderText)
