@@ -4,6 +4,7 @@ include ../components/SubHeader.pug
 include ../components/LoginForm.pug
 include ../components/TextButton.pug
 include ../components/CheckInput.pug
+include ../components/SubButton.pug
 
 block styles
   link(rel="stylesheet", href="/css/global.css")
@@ -11,6 +12,7 @@ block styles
   link(rel="stylesheet", href="/css/components/statusbar.css")
   link(rel="stylesheet", href="/css/components/subheader.css")
   link(rel="stylesheet", href="/css/components/checkInput.css")
+  link(rel="stylesheet", href="/css/components/subButton.css")
 block content
   div(class="container")
     +StatusBar()
@@ -24,3 +26,5 @@ block content
     +SubHeader(headerProps)
     div(id="inputPhone__container")
       +CheckInput("휴대전화", "휴대전화 번호를 입력하세요")
+      div(id="inputPhone__buttonContainer")
+        +SubButton("인증번호 받기")

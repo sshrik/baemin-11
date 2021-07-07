@@ -34,14 +34,6 @@
   margin-right: 14px;
 }
 
-.checkInput__input > .button--active {
-  visibility: visible;
-}
-
-.checkInput__input > .button--nonactive {
-  visibility: hidden;
-}
-
 .checkInput__input > .checkButton {
   width: 14px;
   height: 14px;
