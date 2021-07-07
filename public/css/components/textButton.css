@@ -1,9 +1,12 @@
-.textButtonContainer {
+.textButton__container {
     margin-left: 10px;
     cursor: pointer;
-    border-bottom: 0.5px solid #5DBEBB;
 }
 
-.textButtonContents {
-    color: #5DBEBB;
+.textButton-gray{
+    color : #777;
+}
+
+.textButton-mint{
+    color : var(--bm-mint);
 }

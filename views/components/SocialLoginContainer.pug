@@ -1,2 +1,7 @@
+include SocialLoginButton.pug
+
 mixin SocialLoginContainer()
-    div
+  div(class="socialLogin__container")
+    +SocialLoginButton("facebook")
+    +SocialLoginButton("naver")
+    +SocialLoginButton("apple")
