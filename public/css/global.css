@@ -19,14 +19,14 @@ p  {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", sans-serif;
 }
 
-#phone-container {
-    width: 292.5px;
-    height: 633px;
-    border-radius: calc(292.5 * 0.1);
+#phone__container {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
     border: 1px solid #ccc;
 }
 
-#phone-status-bar{
+#phone__statusBar{
     width: 100%;
     height: 44px;
     background-color: #777;
