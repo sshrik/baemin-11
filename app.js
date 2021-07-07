@@ -1,3 +1,4 @@
+require("./middlewares/index");
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -19,7 +20,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
