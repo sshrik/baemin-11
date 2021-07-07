@@ -15,19 +15,20 @@ block styles
   link(rel="stylesheet", href="/css/components/primeButton.css")
   link(rel="stylesheet", href="/css/components/socialLoginButton.css")
 block content
-  +StatusBar()
-  -
-    const headerProps = {
-      leftSrc: '/resource/close.svg',
-      title: '',
-      rightText: ''
-    }
-  -
-  +SubHeader(headerProps)
-  div(class="loginScreen__container")
-    +LoginForm()
-    div(class="loginScreen__social__container")
-      +SocialLoginContainer()
-      div(class="signUp__container")
-        p 혹시, 배달의 민족이 처음이신가요?
-        +TextButton("회원가입", "mint")
+  div(class="container")
+    +StatusBar()
+    -
+      const headerProps = {
+        leftSrc: '/resource/close.svg',
+        title: '',
+        rightText: ''
+      }
+    -
+    +SubHeader(headerProps)
+    div(class="loginScreen__container")
+      +LoginForm()
+      div(class="loginScreen__social__container")
+        +SocialLoginContainer()
+        div(class="signUp__container")
+          p 혹시, 배달의 민족이 처음이신가요?
+          +TextButton("회원가입", "mint")

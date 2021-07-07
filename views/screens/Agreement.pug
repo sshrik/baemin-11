@@ -16,14 +16,15 @@ block styles
     link(rel="stylesheet", href="/css/components/radioitem.css")
     link(rel="stylesheet", href="/css/components/button.css")
 block content
-    +StatusBar()
-    -
-        const header = {
-            leftSrc: '/resources/close.svg',
-            title: '회원가입',
-            rightText: '다음'
-        }
-    +SubHeader(header)
+    div(class="container")
+        +StatusBar()
+        -
+            const header = {
+                leftSrc: '/resources/close.svg',
+                title: '회원가입',
+                rightText: '다음'
+            }
+        +SubHeader(header)
 
     div(class="h1-description")
         h1 어서오세요
