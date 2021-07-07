@@ -24,8 +24,10 @@ block content
     }
   -
   +SubHeader(headerProps)
-  +LoginForm()
-  +SocialLoginContainer()
-  div(id="signUp__container")
-    p 혹시, 배달의 민족이 처음이신가요?
-    +TextButton("회원가입", "mint")
+  div(class="loginScreen__container")
+    +LoginForm()
+    div(class="loginScreen__social__container")
+      +SocialLoginContainer()
+      div(class="signUp__container")
+        p 혹시, 배달의 민족이 처음이신가요?
+        +TextButton("회원가입", "mint")

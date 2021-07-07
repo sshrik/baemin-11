@@ -2,7 +2,7 @@ include PrimeButton.pug
 include TextButton.pug
 
 mixin LoginForm()
-    div
+    div(class="loginForm__container")
         form(action="" class="loginForm")
             input(type="text" placeholder="아이디 또는 이메일") 
             input(type="password" placeholder="비밀번호")

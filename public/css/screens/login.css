@@ -1,8 +1,24 @@
-#signUp__container {
+.signUp__container {
     margin-top: 20px;
     margin-bottom: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.loginScreen__container {
+  margin-top: 10%;
+  margin-bottom: 13%;
+  height: 77%;
+  width: 100%;
+  padding: 0 var(--default-px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.loginScreen__social__container{ 
+    width: 100%;
 }
