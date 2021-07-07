@@ -1,4 +1,5 @@
 .radio-item{
+  position: relative;
   display:flex;
   align-items: center;
   height: 60px;
@@ -9,21 +10,33 @@
 }
 
 .radio-item > input{
-  width: 24px;
-  height: 24px; 
-  margin-right: 8px;
+  display: none;
 }
 
-.radio-item > label{
+.radio-item > .radio__label{
   display:flex;
   flex-direction: column;
   justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-size:cover;
 }
 
-.radio-item > label > .desc{
+.radio-item > .radio__label__up{
+  background-image: url('/resource/14ageup_F.png');
 }
 
-.radio-item > label > .sub-desc{
-  font-size: var(--sub-desc-size);
-  color: var(--sub-desc-default-color);
+.radio-item > .radio__label__up--check{
+  background-image: url('/resource/14ageup_T.png');
+}
+
+.radio-item > .radio__label__down{
+  background-image: url('/resource/14agedown_F.png');
+}
+
+.radio-item > .radio__label__down--check{
+  background-image: url('/resource/14agedown_T.png');
 }
