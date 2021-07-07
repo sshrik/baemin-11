@@ -1,13 +1,15 @@
+include components/SubHeader.pug
+
 doctype html
 head 
     style
         include ../public/stylesheets/common.css
         include ../public/stylesheets/login.css
 body 
-    div#phone-container
+    div(class="class1" id="phone-container")
         div#phone-status-bar
             p status-bar area
-        include components/SubHeader.pug
+        SubHeader( 어쩌구 저쩌구 )
         include components/LoginForm.pug
         include SocialLoginContainer.pug
         div#sign-up-container
