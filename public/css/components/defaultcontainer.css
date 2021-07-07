@@ -1,0 +1,65 @@
+.default-container{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--default-border-color);
+  height: 70px;
+  padding: 0px var(--default-px);
+}
+
+.default-container > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.default-container > .container__left{
+  display: flex;
+  justify-content: center;
+}
+
+.default-container > .container__left > .left__img{
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.default-container > .container__left > .left__img > img{
+  width: 2em;
+}
+
+.default-container > .container__left > .left__text{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.default-container > .container__left > .left__text > .left__desc{
+  display: flex;
+  align-items: center;
+}
+
+.default-container > .container__left > .left__text > .left__sub-desc{
+  font-size: var(--sub-desc-size);
+  color: var(--sub-desc-default-color);
+}
+
+
+
+.default-container > .container__right{
+  font-size: 24px;
+}
+
+.default-container > .container__right > img{
+  width: 1em;
+}
+
+.new-chip{
+  display:inline;
+  font-size: 10px;
+  padding: 0px 5px;
+  margin: 0px 5px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: #EC0D89;
+}

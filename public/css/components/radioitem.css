@@ -24,6 +24,6 @@
 }
 
 .radio-item > label > .sub-desc{
-  font-size: 12px;
-  color: #9C9C9C;
+  font-size: var(--sub-desc-size);
+  color: var(--sub-desc-default-color);
 }

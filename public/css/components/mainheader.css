@@ -1,0 +1,17 @@
+.main-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 0px;
+  flex-basis: 16px;
+}
+
+.main-header > .header__title{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-header > .header__title > span{
+  font-weight: 800;
+}
