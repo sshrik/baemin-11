@@ -13,3 +13,7 @@ p{
   padding: 0px var(--default-px);
   height: 100vh;
 }
+
+.sub-container{
+  padding: 0px var(--default-px);
+}
