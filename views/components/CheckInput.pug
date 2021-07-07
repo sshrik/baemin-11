@@ -1,10 +1,12 @@
 //- headerText : input에 대한 header에 들어갈 문구
 //- placeholderText : placeholder로 들어갈 문구
 
-mixin CheckInput(headerText, placeholderText)
+mixin CheckInput(headerText, placeholderText, cautionText)
   div(class="checkInput__container")
-    p #{headerText}
-    div(class="checkInput__input")
+    p(class="checkInput__header-p") #{headerText}
+    div(class="checkInput__input checkInput__input-greyBottom")
       input(placeholder=placeholderText)
       img(src="/resource/cancel.png", alt="cancel button", class="cancleButton visible")
       img(src="/resource/mintCheck.png", alt="Check button", class="checkButton")
+    if cautionText
+      p(class="checkInput__caution-p") #{cautionText}
