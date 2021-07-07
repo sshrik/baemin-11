@@ -1,0 +1,7 @@
+//- headerText : input에 대한 header에 들어갈 문구
+//- placeholderText : placeholder로 들어갈 문구
+
+mixin CheckInput(headerText, placeholderText)
+  div(class="checkInput__container")
+    p #{headerText}
+    input(placeholder=placeholderText)
