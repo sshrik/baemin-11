@@ -1,0 +1,9 @@
+.textButtonContainer {
+    margin-left: 10px;
+    cursor: pointer;
+    border-bottom: 0.5px solid #5DBEBB;
+}
+
+.textButtonContents {
+    color: #5DBEBB;
+}
