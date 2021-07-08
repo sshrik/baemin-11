@@ -23,7 +23,7 @@ if(process.env.NODE_ENV === "dev"){
   });  
   app.locals.env = process.env;
   bundle().then(_ => {
-    liveServer.watch(path.resolve("public/js"));
+    liveServer.watch([ path.resolve("public/js"), path.resolve("public/css")]);
     liveServer.server.once("connection", () => {
       setTimeout(() => {
         liveServer.refresh("/");
