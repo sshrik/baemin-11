@@ -16,7 +16,7 @@
 }
 
 .checkbox-header{
-  padding: 8px 0;
+  padding: 2px 0;
 }
 
 .checkbox-list{
@@ -26,7 +26,5 @@
 
 .btn-container{
   width:100%;
-  padding: 24px var(--default-px); 
-  left:0;
-  bottom: 0;
+  margin-bottom: 24px;
 }
