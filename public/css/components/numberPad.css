@@ -1,9 +1,8 @@
 .pad--container {
-  display: flex;
+  position: fixed;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
   background-color: #c0c0c0;
   width: 100vw;
   height: 255px;

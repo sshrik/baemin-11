@@ -5,6 +5,9 @@ include ../components/LoginForm.pug
 include ../components/TextButton.pug
 include ../components/SocialLoginContainer.pug
 
+include ../components/EnglishPad.pug
+include ../components/NumberPad.pug
+
 block styles
   link(rel="stylesheet", href="/css/screens/login.css")
   link(rel="stylesheet", href="/css/components/statusbar.css")
@@ -14,6 +17,8 @@ block styles
   link(rel="stylesheet", href="/css/components/input.css")
   link(rel="stylesheet", href="/css/components/button.css")
   link(rel="stylesheet", href="/css/components/socialLoginButton.css")
+  link(rel="stylesheet", href="/css/components/englishPad.css")
+  link(rel="stylesheet", href="/css/components/numberPad.css")
 block content
   div(class="container")
     +StatusBar()
@@ -33,6 +38,7 @@ block content
           p 혹시, 배달의 민족이 처음이신가요?
           a(href="/agreement")
             +TextButton("회원가입", "mint")
+  +EnglishPad()
 
 block scripts
   script(src="/js/login.js")
