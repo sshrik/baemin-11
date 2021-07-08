@@ -1,9 +1,12 @@
 import * as $ from "../utils/$";
 
-let checkBoxChecked = {};
+const checkBoxChecked = {};
 
 let checkboxImages = $.qsa(".checkbox-input__img");
 let checkBoxImageAll = document.getElementById("all");
+
+const falseCheckBox = "/resource/checkbox_F.png";
+const trueCheckBox = "/resource/checkbox_T.png";
 
 for(let i=0; i < checkboxImages.length; i++) {
   checkBoxChecked[checkboxImages[i].id] = false;
@@ -11,10 +14,10 @@ for(let i=0; i < checkboxImages.length; i++) {
     checkboxImages[i].addEventListener("click", (e) => {
       let target = e.target;
 
-      let targetBool = target.getAttribute("src") === "/resource/checkbox_F.png";
+      let targetBool = target.getAttribute("src") === falseCheckBox;
       for(let j=0; j < checkboxImages.length; j++) { 
         setSrc(checkboxImages[j], targetBool);
-        checkBoxChecked[checkboxImages[j].id] = (target.getAttribute("src") === "/resource/checkbox_T.png");
+        checkBoxChecked[checkboxImages[j].id] = (target.getAttribute("src") === trueCheckBox);
       }
       checkNext();
     });
@@ -24,28 +27,30 @@ for(let i=0; i < checkboxImages.length; i++) {
       let target = e.target;
       checkBoxChecked[checkboxImages[i].id] = toggleSrc(target);
       setSrc(checkBoxImageAll, allCheck());
+      checkBoxChecked.all = (checkboxImages[i].getAttribute("src") === trueCheckBox);
+      console.log(checkBoxChecked);
       checkNext();
     });
   }
 }
 
 function toggleSrc(dst) {
-  if(dst.getAttribute("src") === "/resource/checkbox_F.png") {
-    dst.setAttribute("src", "/resource/checkbox_T.png");
+  if(dst.getAttribute("src") === falseCheckBox) {
+    dst.setAttribute("src", trueCheckBox);
     return true;
   }
   else {
-    dst.setAttribute("src", "/resource/checkbox_F.png");
+    dst.setAttribute("src", falseCheckBox);
     return false;
   }
 }
 
 function setSrc(dst, to) {
   if(to) {
-    dst.setAttribute("src", "/resource/checkbox_T.png");
+    dst.setAttribute("src", trueCheckBox);
   }
   else {
-    dst.setAttribute("src", "/resource/checkbox_F.png");
+    dst.setAttribute("src", falseCheckBox);
   }
 }
 
@@ -63,18 +68,22 @@ function checkAge() {
   return checkBoxChecked.radio1 || checkBoxChecked.radio2;
 }
 
+const disabledButton = "btn-disable";
+const activeButton = "btn-primary";
+
 function checkNext() {
   let bottomButton = document.getElementsByClassName("btn")[0];
+  console.log(checkAgree() && checkAge());
   if(checkAgree() && checkAge()) {
-    if(bottomButton.classList.contains("btn-disable")) {
-      bottomButton.classList.remove("btn-disable");
-      bottomButton.classList.add("btn-primary");
+    if(bottomButton.classList.contains(disabledButton)) {
+      bottomButton.classList.remove(disabledButton);
+      bottomButton.classList.add(activeButton);
     }
   }
   else {
-    if(bottomButton.classList.contains("btn-primary")) {
-      bottomButton.classList.remove("btn-primary");
-      bottomButton.classList.add("btn-disable");
+    if(bottomButton.classList.contains(activeButton)) {
+      bottomButton.classList.remove(activeButton);
+      bottomButton.classList.add(disabledButton);
     }
   }
 }
@@ -82,35 +91,40 @@ function checkNext() {
 let radioButton1 = document.getElementById("radio1");
 let radioButton2 = document.getElementById("radio2");
 
+const uncheckedUpLabel = "radio__label__up";
+const uncheckedDownLabel = "radio__label__down";
+const checkedUpLabel = "radio__label__up--check";
+const checkedDownLabel = "radio__label__down--check";
+
 radioButton1.addEventListener("click", (e) => {
-  if(e.target.classList.contains("radio__label__up")) {
-    e.target.classList.remove("radio__label__up");
-    e.target.classList.add("radio__label__up--check");
-    radioButton2.classList.remove("radio__label__down--check");
-    radioButton2.classList.add("radio__label__down");
+  if(e.target.classList.contains(uncheckedUpLabel)) {
+    e.target.classList.remove(uncheckedUpLabel);
+    e.target.classList.add(checkedUpLabel);
+    radioButton2.classList.remove(checkedDownLabel);
+    radioButton2.classList.add(uncheckedDownLabel);
     checkBoxChecked[radioButton1.id] = true;
     checkBoxChecked[radioButton2.id] = false;
   }
   else {
-    e.target.classList.remove("radio__label__up--check");
-    e.target.classList.add("radio__label__up");
+    e.target.classList.remove(checkedUpLabel);
+    e.target.classList.add(uncheckedUpLabel);
     checkBoxChecked[radioButton1.id] = false;
   }
   checkNext();
 });
 
 radioButton2.addEventListener("click", (e) => {
-  if(e.target.classList.contains("radio__label__down")) {
-    e.target.classList.remove("radio__label__down");
-    e.target.classList.add("radio__label__down--check");
-    radioButton1.classList.remove("radio__label__up--check");
-    radioButton1.classList.add("radio__label__up");
+  if(e.target.classList.contains(uncheckedDownLabel)) {
+    e.target.classList.remove(uncheckedDownLabel);
+    e.target.classList.add(checkedDownLabel);
+    radioButton1.classList.remove(checkedUpLabel);
+    radioButton1.classList.add(uncheckedUpLabel);
     checkBoxChecked[radioButton2.id] = true;
     checkBoxChecked[radioButton1.id] = false;
   }
   else {
-    e.target.classList.remove("radio__label__down--check");
-    e.target.classList.add("radio__label__down");
+    e.target.classList.remove(checkedDownLabel);
+    e.target.classList.add(uncheckedDownLabel);
     checkBoxChecked[radioButton2.id] = false;
   }
   checkNext();
