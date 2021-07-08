@@ -12,6 +12,7 @@ const loginRouter = require('./routes/login');
 const agreementRouter = require("./routes/agreement");
 const inputPhoneRouter = require("./routes/inputPhone");
 const inputEmailRouter = require("./routes/inputEmail");
+const apiRouter = require("./routes/api");
 
 const app = express();
 
@@ -45,6 +46,7 @@ app.use('/login', loginRouter);
 app.use('/inputPhone', inputPhoneRouter);
 app.use('/inputEmail', inputEmailRouter);
 app.use('/agreement', agreementRouter);
+app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
