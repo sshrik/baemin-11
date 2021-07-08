@@ -19,7 +19,7 @@ mixin DefaultContainer(props)
         span(class="left__desc", style= props.descriptionStyle)
           = props.description
           if props.isNew
-            span(class="new-chip") new
+            span(class="new-chip") NEW
         span(class="left__sub-desc")= props.subDescription 
     div(class="container__right" onclick=props.onClick)
       img(src="/resource/chevron-forward.svg", alt="chevron-forward")
