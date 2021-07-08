@@ -46,6 +46,7 @@
 
 .default-container > .container__right{
   font-size: 24px;
+  cursor: pointer;
 }
 
 .default-container > .container__right > img{
