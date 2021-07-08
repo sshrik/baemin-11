@@ -1,12 +1,13 @@
-include PrimeButton.pug
 include TextButton.pug
+include Button.pug
+include Input.pug
 
 mixin LoginForm()
     div(class="loginForm__container")
-        form(action="" class="loginForm")
-            input(type="text" placeholder="아이디 또는 이메일") 
-            input(type="password" placeholder="비밀번호")
-        +PrimeButton("로그인", true)
+        form(action="/signin", class="loginForm", method="POST")
+            +Input({ name: 'email', placeholder: '아이디 또는 이메일' })
+            +Input({ name: 'password', placeholder: '비밀번호', type: "password" })
+        +Button("primary", "lg", "로그인", 'signin-submit')
         div(class="finder__container")
             +TextButton("아이디 찾기", "gray")
             div(class="finder__divider")
