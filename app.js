@@ -42,7 +42,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(expressSession({
   secret: '2@ad!!da',
-  resave: true,
+  resave: false,
   saveUninitialized:true
 }));
 

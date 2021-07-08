@@ -27,7 +27,15 @@ function sessionWork(req, res, setTo, available) {
   return result;
 }
 
+function sessionLogin(req, id) {
+  if(!req.session.user) {
+    req.session.user = {};
+  }
+  req.session.user[id] = true;
+  // console.log(req.session);
+}
 
 module.exports = {
-  sessionWork: sessionWork
+  sessionWork: sessionWork,
+  sessionLogin: sessionLogin
 }
