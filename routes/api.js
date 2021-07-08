@@ -32,6 +32,8 @@ router.post('/logIn', function(req, res, next) {
       res.redirect("/login?email=" + id);
     }
     else{ 
+      ssw.sessionLogin(req, id);
+      console.log(req.session);
       res.redirect("/");
     }
   });
