@@ -1,0 +1,1 @@
+export const qsa = (selector, element = document) => element.querySelectorAll(selector);
