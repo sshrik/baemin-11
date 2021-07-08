@@ -16,6 +16,7 @@ for(let i=0; i < checkboxImages.length; i++) {
         setSrc(checkboxImages[j], targetBool);
         checkBoxChecked[checkboxImages[j].id] = (target.getAttribute("src") === "/resource/checkbox_T.png");
       }
+      checkNext();
     });
   }
   else {
@@ -23,6 +24,7 @@ for(let i=0; i < checkboxImages.length; i++) {
       let target = e.target;
       checkBoxChecked[checkboxImages[i].id] = toggleSrc(target);
       setSrc(checkBoxImageAll, allCheck());
+      checkNext();
     });
   }
 }
@@ -62,8 +64,18 @@ function checkAge() {
 }
 
 function checkNext() {
+  let bottomButton = document.getElementsByClassName("btn")[0];
   if(checkAgree() && checkAge()) {
-
+    if(bottomButton.classList.contains("btn-disable")) {
+      bottomButton.classList.remove("btn-disable");
+      bottomButton.classList.add("btn-primary");
+    }
+  }
+  else {
+    if(bottomButton.classList.contains("btn-primary")) {
+      bottomButton.classList.remove("btn-primary");
+      bottomButton.classList.add("btn-disable");
+    }
   }
 }
 
@@ -84,6 +96,7 @@ radioButton1.addEventListener("click", (e) => {
     e.target.classList.add("radio__label__up");
     checkBoxChecked[radioButton1.id] = false;
   }
+  checkNext();
 });
 
 radioButton2.addEventListener("click", (e) => {
@@ -100,6 +113,7 @@ radioButton2.addEventListener("click", (e) => {
     e.target.classList.add("radio__label__down");
     checkBoxChecked[radioButton2.id] = false;
   }
+  checkNext();
 });
 
 
