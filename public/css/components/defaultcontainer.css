@@ -49,6 +49,10 @@
   cursor: pointer;
 }
 
+.default-container > .container__right > a > img{
+  width: 0.8em;
+}
+
 .default-container > .container__right > img{
   width: 0.8em;
 }

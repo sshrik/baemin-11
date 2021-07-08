@@ -21,5 +21,9 @@ mixin DefaultContainer(props)
           if props.isNew
             span(class="new-chip") NEW
         span(class="left__sub-desc")= props.subDescription 
-    div(class="container__right" onclick=props.onClick)
-      img(src="/resource/chevron-forward.svg", alt="chevron-forward")
+    div(class="container__right")
+      if props.clickHref 
+        a(href=props.clickHref)
+          img(src="/resource/chevron-forward.svg", alt="chevron-forward")
+      else 
+        img(src="/resource/chevron-forward.svg", alt="chevron-forward")
