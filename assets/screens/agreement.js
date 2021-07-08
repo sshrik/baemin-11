@@ -116,4 +116,9 @@ radioButton2.addEventListener("click", (e) => {
   checkNext();
 });
 
-
+let bottomButton = document.getElementsByClassName("btn")[0];
+bottomButton.addEventListener("click", (e) => {
+  if(checkAgree() && checkAge()) {
+    window.location.href = "/inputPhone";
+  }
+})

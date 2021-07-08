@@ -1,6 +1,2 @@
-mixin Button(color, size, desc, nextHref)
-  if nextHref
-    a(href=nextHref)
-      button(class=`btn btn-${color} btn-${size} btn-disable`)= desc
-  else
-    button(class=`btn btn-${color} btn-${size} btn-disable`)= desc
+mixin Button(color, size, desc)
+  button(class=`btn btn-${color} btn-${size} btn-disable`)= desc
