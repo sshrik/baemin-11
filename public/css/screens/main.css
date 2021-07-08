@@ -78,13 +78,15 @@
 }
 
 .promotion > .promotion__item > .promotion__left > .left__img > img{
-  width: 2em;
+  width: 1.2em;
+  padding: 0.4em 0;
 }
 
 .promotion > .promotion__item > .promotion__left > .left__text{
   display:flex;
   flex-direction: column;
   justify-content: center;
+  color: var(--bm-green);
 }
 
 .promotion > .promotion__item > .promotion__right{
