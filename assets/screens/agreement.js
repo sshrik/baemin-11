@@ -16,8 +16,6 @@ for(let i=0; i < checkboxImages.length; i++) {
         setSrc(checkboxImages[j], targetBool);
         checkBoxChecked[checkboxImages[j].id] = (target.getAttribute("src") === "/resource/checkbox_T.png");
       }
-
-      console.log(checkAgree());
     });
   }
   else {
@@ -25,7 +23,6 @@ for(let i=0; i < checkboxImages.length; i++) {
       let target = e.target;
       checkBoxChecked[checkboxImages[i].id] = toggleSrc(target);
       setSrc(checkBoxImageAll, allCheck());
-      console.log(checkAgree());
     });
   }
 }
@@ -59,3 +56,50 @@ function checkAgree() {
   else if(checkBoxChecked.agree1 && checkBoxChecked.agree2 && checkBoxChecked.agree3) return true;
   else return false;
 }
+
+function checkAge() {
+  return checkBoxChecked.radio1 || checkBoxChecked.radio2;
+}
+
+function checkNext() {
+  if(checkAgree() && checkAge()) {
+
+  }
+}
+
+let radioButton1 = document.getElementById("radio1");
+let radioButton2 = document.getElementById("radio2");
+
+radioButton1.addEventListener("click", (e) => {
+  if(e.target.classList.contains("radio__label__up")) {
+    e.target.classList.remove("radio__label__up");
+    e.target.classList.add("radio__label__up--check");
+    radioButton2.classList.remove("radio__label__down--check");
+    radioButton2.classList.add("radio__label__down");
+    checkBoxChecked[radioButton1.id] = true;
+    checkBoxChecked[radioButton2.id] = false;
+  }
+  else {
+    e.target.classList.remove("radio__label__up--check");
+    e.target.classList.add("radio__label__up");
+    checkBoxChecked[radioButton1.id] = false;
+  }
+});
+
+radioButton2.addEventListener("click", (e) => {
+  if(e.target.classList.contains("radio__label__down")) {
+    e.target.classList.remove("radio__label__down");
+    e.target.classList.add("radio__label__down--check");
+    radioButton1.classList.remove("radio__label__up--check");
+    radioButton1.classList.add("radio__label__up");
+    checkBoxChecked[radioButton2.id] = true;
+    checkBoxChecked[radioButton1.id] = false;
+  }
+  else {
+    e.target.classList.remove("radio__label__down--check");
+    e.target.classList.add("radio__label__down");
+    checkBoxChecked[radioButton2.id] = false;
+  }
+});
+
+
