@@ -3,7 +3,7 @@ include ../components/StatusBar.pug
 include ../components/SubHeader.pug
 include ../components/LoginForm.pug
 include ../components/TextButton.pug
-include ../components/CheckInput.pug
+include ../components/Input.pug
 include ../components/SubButton.pug
 
 block styles
@@ -13,6 +13,7 @@ block styles
   link(rel="stylesheet", href="/css/components/subheader.css")
   link(rel="stylesheet", href="/css/components/textButton.css")
   link(rel="stylesheet", href="/css/components/checkInput.css")
+  link(rel="stylesheet", href="/css/components/input.css")
   link(rel="stylesheet", href="/css/components/subButton.css")
 block content
   div(class="container")
@@ -26,9 +27,9 @@ block content
     -
     +SubHeader(headerProps)
     div(id="inputPhone__container")
-      +CheckInput("휴대전화", "휴대전화 번호를 입력해주세요")
+      +Input({ name: 'phone', headerText: '휴대전화', placeholder: '휴대전화 번호를 입력해주세요' })
       div(id="inputPhone__buttonContainer")
-        //- +SubButton("인증번호 받기")
-        +CheckInput("인증번호", "인증번호를 입력해주세요")
-        div(id="inputPhone__textButtonContainer")
-          +TextButton("인증번호 다시받기", "mint")
+        +SubButton({ classSelector: 'verify-btn', content: "인증번호 받기" }))
+
+block scripts 
+  script(src="/js/inputPhone.js") 
