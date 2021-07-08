@@ -23,7 +23,7 @@ block content
             const header = {
                 leftSrc: '/resource/close.svg',
                 title: '회원가입',
-                rightText: '다음'
+                rightText: ''
             }
         +SubHeader(header)
         div(class="agreementScreen__container")
@@ -34,13 +34,13 @@ block content
             
                 div(class="checkbox-container")
                     div(class="checkbox-header")
-                        +Checkbox('all', 'all', '전체동의', false)
+                        +Checkbox({id: 'all', name: 'all', label: '전체동의', isIcon: false, optionalClass: "checkBox__title"})
                     div(class="checkbox-list")
-                        +Checkbox('agree1', 'agree1' ,'배달의민족 이용약관 동의', true)
-                        +Checkbox('agree2', 'agree2' ,'전자금융거래 이용약관 동의', true)
-                        +Checkbox('agree3', 'agree3' ,'개안정보 이용약관 동의', true)
-                        +Checkbox('agree4', 'agree4' ,'개인정보 제3자 제공 동의(선택)', true)
-                        +Checkbox('agree5', 'agree5' ,'마케팅 정보 메일, SMS 수신동의(선택)', false)
+                        +Checkbox({id: 'agree1', name: 'agree1', label: '배달의민족 이용약관 동의', isIcon: true, optionalClass: "checkBox__subTitle"})
+                        +Checkbox({id: 'agree2', name: 'agree2', label: '전자금융거래 이용약관 동의', isIcon: true, optionalClass: "checkBox__subTitle"})
+                        +Checkbox({id: 'agree3', name: 'agree3', label: '개인정보 이용약관 동의', isIcon: true, optionalClass: "checkBox__subTitle"})
+                        +Checkbox({id: 'agree4', name: 'agree4', label: '개인정보 제3자 제공 동의(선택)', isIcon: true, optionalClass: "checkBox__subTitle"})
+                        +Checkbox({id: 'agree5', name: 'agree5', label: '마케팅 정보 메일, SMS 수신동의(선택)', isIcon: false, optionalClass: "checkBox__subTitle"})
             
                 div(class="radio-container")
                     +Radio('radio1', 'age', 'up')

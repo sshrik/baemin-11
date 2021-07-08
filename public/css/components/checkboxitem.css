@@ -21,8 +21,21 @@
   margin-right: 8px;
 }
 
+.checkbox-input > label{
+  font-size: 14px;
+}
+
+.checkBox__title {
+  font-weight: 600;
+}
+
+.checkBox__subTitle {
+  color: #333;
+}
+
 .checkbox-more-btn{
   font-size: 24px;
+  cursor: pointer;
 }
 
 .checkbox-more-btn > img{

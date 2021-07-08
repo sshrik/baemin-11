@@ -24,6 +24,7 @@
 
 .sub-header > .header__center{
   justify-content: center;
+  font-weight: 600;
 }
 
 .sub-header > .header__right{
