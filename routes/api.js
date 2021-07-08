@@ -21,6 +21,16 @@ router.post('/signIn', function(req, res, next) {
   });
 });
 
+
+router.post('/logIn', function(req, res, next) {
+  const id = req.body.id;
+  const pw = req.body.pw;
+
+  auth.logIn(id, pw, (result, resTF) => {
+    sendData(res, result, resTF) 
+  });
+});
+
 router.post('/checkDup', function(req, res, next) {
   const id = req.body.id;
 

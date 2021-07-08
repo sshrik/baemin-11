@@ -65,7 +65,30 @@ function checkDuplicate(id, next) {
   },next);
 }
 
+function logIn(id, pw, next) { 
+  errorHandler(() => {
+    db.checkDuplicate(userDB, (item) => {
+      return item.id === id && item.pw === pw;
+    })
+    .then((isDuplicate) => {
+      if(isDuplicate) {
+        next({
+          result: true,
+          msg: "로그인 성공!"
+        }, true);
+      }
+      else {
+        next({
+          result: false,
+          msg: "로그인 실패!"
+        }, true);
+      }
+    })
+  },next);
+}
+
 module.exports = {
   addTo: addTo,
-  checkDuplicate: checkDuplicate
+  checkDuplicate: checkDuplicate,
+  logIn: logIn
 }
