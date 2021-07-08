@@ -16,9 +16,10 @@
   display: flex;
   align-items: center;
   font-size: 24px;
+  cursor: pointer;
 }
 
-.sub-header > .header__left > img{
+.sub-header > .header__left > a > img{
   width: 1em;
 }
 

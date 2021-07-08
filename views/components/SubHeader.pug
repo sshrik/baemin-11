@@ -1,7 +1,8 @@
 mixin SubHeader(props)
   div(class="sub-header")
     div(class="header__left")
-      img(src= props.leftSrc, alt="left-icon")
+      a(href=props.goto)
+        img(src= props.leftSrc, alt="left-icon")
     div(class="header__center")
       span= props.title
     div(class="header__right")
