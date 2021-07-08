@@ -36,10 +36,12 @@
   background-color: #FFF;
   border-radius: 5px;
   margin-left: 5px;
+  cursor: pointer;
 }
 
 .dial-empty {
-  background-color: #c0c0c0;
+  cursor:auto;
+  background-color: #c0c0c0 ;
 }
 
 .numberPad--row > .numberPad-dial:first-child {
