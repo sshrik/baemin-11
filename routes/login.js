@@ -8,7 +8,11 @@ router.get('/', function(req, res, next) {
         res.redirect("/");
     }
     else {
-        res.render("screens/Login");
+        if(req.query.email) {
+            console.log(req.query.email);
+            res.render("screens/Login", {preEmail : req.query.email});
+        }
+        else res.render("screens/Login");
     }
 });
 

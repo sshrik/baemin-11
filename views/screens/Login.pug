@@ -26,7 +26,10 @@ block content
     -
     +SubHeader(headerProps)
     div(class="loginScreen__container")
-      +LoginForm()
+      if preEmail
+        +LoginForm(preEmail)
+      else
+        +LoginForm()
       div(class="loginScreen__social__container")
         +SocialLoginContainer()
         div(class="signUp__container")

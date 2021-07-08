@@ -24,14 +24,16 @@ router.post('/signIn', function(req, res, next) {
 
 
 router.post('/logIn', function(req, res, next) {
-  const id = req.body.id;
-  const pw = req.body.pw;
-
+  const id = req.body.email;
+  const pw = req.body.password;
+  
   auth.logIn(id, pw, (result, resTF) => {
-    if(resTF) {
-      ssw.sessionLogin(req, id);
+    if(!result.result) {
+      res.redirect("/login?email=" + id);
     }
-    sendData(res, result, resTF) 
+    else{ 
+      res.redirect("/");
+    }
   });
 });
 
