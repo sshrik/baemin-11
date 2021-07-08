@@ -7,6 +7,7 @@
 //-     - color : 글자색
 //-     - font-weight : 굵기
 //-   isNew - new chip의 표기 여부
+//-   onClick : click 시 일어나는 이벤트 작성
 
 mixin DefaultContainer(props)
   div(class="default-container")
@@ -20,5 +21,5 @@ mixin DefaultContainer(props)
           if props.isNew
             span(class="new-chip") new
         span(class="left__sub-desc")= props.subDescription 
-    div(class="container__right")
+    div(class="container__right" onclick=props.onClick)
       img(src="/resource/chevron-forward.svg", alt="chevron-forward")

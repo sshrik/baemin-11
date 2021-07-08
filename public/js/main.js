@@ -1,0 +1,1 @@
+window.routeFunction={},window.routeFunction.routeToLogin=function(){window.location.href=window.location.href+"login"};
