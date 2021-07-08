@@ -43,4 +43,17 @@ router.post('/checkDup', function(req, res, next) {
   });
 });
 
+router.get('/reqAuth', function(req, res, next) {
+  const randomNumber = ssw.setRandomNumber(req);
+
+  sendData(res, {auth: randomNumber}, true);
+});
+
+router.post('/auth', function(req, res, next) {
+  const authKey = req.body.authKey;
+  ssw.authNumbering(req, authKey, (result, resTF) => {
+    sendData(res, result, resTF) 
+  });
+});
+
 module.exports = router;
