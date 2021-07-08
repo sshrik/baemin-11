@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('screens/Main');
 });
 
+router.get('/Pad', function(req, res, next) {
+  res.render('screens/Pad');
+});
+
 module.exports = router;
