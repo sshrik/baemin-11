@@ -24,3 +24,27 @@ export const autoFillDash = (str) => {
     return phone;
   }
 }
+
+export const autoFillDot = (str) => {
+  const nums = str.replace(/[^0-9]/g, '');
+  let birth = '';
+  if(nums.length <= 4){
+    return nums;
+  }else if(nums.length < 7){
+    birth += nums.slice(0, 4); // 2020
+    birth += ".";
+    birth += nums.slice(4); // 2020.01
+    return birth;
+  }else{
+    birth += nums.slice(0, 4); // 2020
+    birth += ".";
+    birth += nums.slice(4, 6); // 2020.01
+    birth += ".";
+    birth += nums.slice(6, 8); // 2020.01.01
+    return birth;
+  }
+}
+
+/**
+ * 2020.
+ */
