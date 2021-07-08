@@ -7,7 +7,7 @@
 .checkbox-item > div{
   display: flex;
   align-items: center;
-  padding: 16px 0px;
+  padding: 12px 0px;
 }
 
 .checkbox-input{}
@@ -19,13 +19,26 @@
 .checkbox-input > img{
   width: 24px;
   margin-right: 8px;
+  cursor: pointer;
+}
+
+.checkbox-input > label{
+  font-size: 14px;
+}
+
+.checkBox__title {
+  font-weight: 600;
+}
+
+.checkBox__subTitle {
+  color: #333;
 }
 
 .checkbox-more-btn{
   font-size: 24px;
+  cursor: pointer;
 }
 
 .checkbox-more-btn > img{
-  color: #cfcfcf;
-  width: 1em;
+  width: 0.8em;
 }

@@ -1,9 +1,8 @@
-mixin Checkbox(id, name, label, isIcon)
+mixin Checkbox(props)
   div(class="checkbox-item")
     div(class="checkbox-input")
-      img(src="/resource/checkbox_F.png", alt="checkbox", data-checked-src='/resource/checkbox_T.png' data-unchecked-src="/resource/checkbox_F.png")
-      input(type="checkbox", name= name, id= id)/
-      label(for= id)= label
-    if isIcon
+      img(id= props.id class="checkbox-input__img" src="/resource/checkbox_F.png", alt="checkbox", data-checked-src='/resource/checkbox_T.png' data-unchecked-src="/resource/checkbox_F.png")
+      label(class=props.optionalClass for= props.id)= props.label
+    if props.isIcon
       div(class="checkbox-more-btn")
         img(src="/resource/chevron-forward.svg", alt="chevron-forward")
