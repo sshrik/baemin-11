@@ -17,3 +17,15 @@ p{
 .sub-container{
   padding: 0px var(--default-px);
 }
+
+.nonVisible {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.nonExist {
+  display: none;
+}
