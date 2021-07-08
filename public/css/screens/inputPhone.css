@@ -1,0 +1,19 @@
+#inputPhone__container {
+  width: 100%;
+  height: calc(100% - 94px);
+  padding-left: 6px
+}
+
+#inputPhone__buttonContainer {
+  width: 100%;
+  height: 36px;
+  margin-top: 36px;
+}
+
+#inputPhone__textButtonContainer {
+  width: 100%;
+  height: 14px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 36px;
+}

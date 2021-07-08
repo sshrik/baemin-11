@@ -3,15 +3,18 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "dev": "NODE_ENV=dev nodemon -e js,pug ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "livereload": "^0.9.3",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.9",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "webpack": "^5.43.0"
   }
 }
