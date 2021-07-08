@@ -32,11 +32,14 @@
 }
 
 .menu-navigation > .menu-item-row > .menu-item > .item__img > img{
-  width: 2em;
+  width: 1.2em;
+  height: 1.2em;
+  object-fit: contain;
 }
 
 .menu-navigation > .menu-item-row > .menu-item > .item__text > span{
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 600;
   color: var(--sub-desc-default-color);
 }
 
@@ -89,5 +92,5 @@
 }
 
 .promotion > .promotion__item > .promotion__right img{
-  width: 1em;
+  width: 0.8em;
 }
