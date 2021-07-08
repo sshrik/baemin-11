@@ -15,34 +15,35 @@ block styles
 block content
     div(class="sub-container")
         +StatusBar()
-        +MainHeader('MY 배민')
+        +MainHeader('My 배민')
         
     div(class="image-banner")
         img(src="/resource/image-banner.png", alt="image")
 
     - 
         const defaultContainerProps = {
-            leftSrc: '/resource/bm-icon.png',
+            leftSrc: '/resource/profile.png',
             descriptionStyle: {
-                'font-size': '18px',
-                color: '#c9c9c9',
-                'font-weight': '600',
+                'font-size': '20px',
+                color: '#999',
+                'font-weight': '400',
             },
-            description: '로그인 해주세요',
+            description: '로그인해주세요',
+            clickHref: '/login'
         }
     +DefaultContainer(defaultContainerProps)
 
     - 
         const menuItems = [
             [
-                { src: '/resource/bm-icon.png', desc: '포인트' },
-                { src: '/resource/bm-icon.png', desc: '포인트' },
-                { src: '/resource/bm-icon.png', desc: '포인트' }
+                { src: '/resource/point.png', desc: '포인트', alt: 'point tab' },
+                { src: '/resource/coupon.png', desc: '쿠폰함', alt: 'coupon tab' },
+                { src: '/resource/present.png', desc: '선물함', alt: 'present tab' }
             ],
             [
-                { src: '/resource/bm-icon.png', desc: '포인트' },
-                { src: '/resource/bm-icon.png', desc: '포인트' },
-                { src: '/resource/bm-icon.png', desc: '포인트' }
+                { src: '/resource/zzim.png', desc: '찜', alt: 'my tab' },
+                { src: '/resource/order.png', desc: '주문내역', alt: 'order tab' },
+                { src: '/resource/review.png', desc: '리뷰관리', alt: 'review tab' }
             ]
         ];
     
@@ -52,15 +53,15 @@ block content
                 each item in row 
                     div(class="menu-item")
                         div(class="item__img")
-                            img(src='/resource/bm-icon.png', alt="point")
+                            img(src=item.src, alt=item.alt)
                         div(class="item__text")
-                            span 포인트
+                            span #{item.desc}
 
     div(class="promotion")
         div(class="promotion__item")
             div(class="promotion__left")
                 div(class="left__img")
-                    img(src="/resource/bm-icon.png", alt="promotion")
+                    img(src="/resource/plant.png", alt="promotion")
                 div(class="left__text")
                     span(class="left__desc") 일회용품 덜 쓰기, 함께해요!
             div(class="promotion__right")
@@ -69,11 +70,19 @@ block content
     - 
         const props1 = { 
             description: '배민페이 등록', 
+            descriptionStyle: {
+                'font-size': '15px',
+                'font-weight': '300',
+            },
             subDescription: '배민페이로 결제하면 최대 5.5% 배민포인트가 적립됩니다.',
             isNew: true
         };
         const props2 = { 
             description: '가족계정 관리',
+            descriptionStyle: {
+                'font-size': '15px',
+                'font-weight': '300',
+            },
             subDescription: '결제수단을 공유해 우리 가족의 끼니를 챙겨주세요.',
             isNew: true
         };
