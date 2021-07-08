@@ -38,6 +38,10 @@
   margin-left: 5px;
 }
 
+.dial-empty {
+  background-color: #c0c0c0;
+}
+
 .numberPad--row > .numberPad-dial:first-child {
   margin-left: 0px;
 }
