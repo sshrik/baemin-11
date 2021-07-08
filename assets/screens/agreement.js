@@ -10,40 +10,43 @@ for(let i=0; i < checkboxImages.length; i++) {
   if(checkboxImages[i].id === "all") {
     checkboxImages[i].addEventListener("click", (e) => {
       let target = e.target;
-      if(target.getAttribute("src") === "/resource/checkbox_F.png") {
-        for(let j=0; j < checkboxImages.length; j++) { 
-          checkboxImages[j].setAttribute("src", "/resource/checkbox_T.png");
-          checkBoxChecked[checkboxImages[j].id] = true;
-        }
+
+      let targetBool = target.getAttribute("src") === "/resource/checkbox_F.png";
+      for(let j=0; j < checkboxImages.length; j++) { 
+        setSrc(checkboxImages[j], targetBool);
+        checkBoxChecked[checkboxImages[j].id] = (target.getAttribute("src") === "/resource/checkbox_T.png");
       }
-      else {
-        for(let j=0; j < checkboxImages.length; j++) { 
-          checkboxImages[j].setAttribute("src", "/resource/checkbox_F.png");
-          checkBoxChecked[checkboxImages[j].id] = false;
-        }
-      }
+
       console.log(checkAgree());
     });
   }
   else {
     checkboxImages[i].addEventListener("click", (e) => {
       let target = e.target;
-      if(target.getAttribute("src") === "/resource/checkbox_F.png") {
-        target.setAttribute("src", "/resource/checkbox_T.png");
-        checkBoxChecked[checkboxImages[i].id] = true;
-      }
-      else {
-        target.setAttribute("src", "/resource/checkbox_F.png");
-        checkBoxChecked[checkboxImages[i].id] = false;
-      }
-      if(allCheck()) {
-        checkBoxImageAll.setAttribute("src", "/resource/checkbox_T.png");
-      }
-      else {
-        checkBoxImageAll.setAttribute("src", "/resource/checkbox_F.png");
-      }
+      checkBoxChecked[checkboxImages[i].id] = toggleSrc(target);
+      setSrc(checkBoxImageAll, allCheck());
       console.log(checkAgree());
     });
+  }
+}
+
+function toggleSrc(dst) {
+  if(dst.getAttribute("src") === "/resource/checkbox_F.png") {
+    dst.setAttribute("src", "/resource/checkbox_T.png");
+    return true;
+  }
+  else {
+    dst.setAttribute("src", "/resource/checkbox_F.png");
+    return false;
+  }
+}
+
+function setSrc(dst, to) {
+  if(to) {
+    dst.setAttribute("src", "/resource/checkbox_T.png");
+  }
+  else {
+    dst.setAttribute("src", "/resource/checkbox_F.png");
   }
 }
 
