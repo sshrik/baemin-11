@@ -22,14 +22,15 @@ block content
       const headerProps = {
         leftSrc: '/resource/arrow-back.svg',
         title: '회원가입',
-        rightText: '다음'
+        rightText: '다음',
+        rightBtnClassSelector: "next-btn"
       }
     -
     +SubHeader(headerProps)
     div(id="inputPhone__container")
-      +Input({ name: 'phone', headerText: '휴대전화', placeholder: '휴대전화 번호를 입력해주세요' })
+      +Input({ name: 'phone', headerText: '휴대전화', placeholder: '휴대전화 번호를 입력해주세요', isIcon: true })
       div(id="inputPhone__buttonContainer")
-        +SubButton({ classSelector: 'verify-btn', content: "인증번호 받기" })
+        +SubButton({ classSelector: 'verify-btn', content: "인증번호 받기", isActive:true })
 
 block scripts 
   script(src="/js/inputPhone.js") 
