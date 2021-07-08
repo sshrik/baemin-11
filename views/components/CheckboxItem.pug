@@ -1,6 +1,7 @@
 mixin Checkbox(id, name, label, isIcon)
   div(class="checkbox-item")
     div(class="checkbox-input")
+      img(src="/resource/checkbox_F.png", alt="checkbox", data-checked-src='/resource/checkbox_T.png' data-unchecked-src="/resource/checkbox_F.png")
       input(type="checkbox", name= name, id= id)/
       label(for= id)= label
     if isIcon
