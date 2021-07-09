@@ -13,6 +13,10 @@ const autoFillDashInput = ({ target }) => {
 
 phoneInput.addEventListener('input', autoFillDashInput);
 
+setInterval(() => {
+  autoFillDashInput({target: phoneInput});
+}, 200);
+
 const validInputOptions = {
   validator: validator.phone,
   validDangerText: '올바른 핸드폰 번호를 입력해주세요.'
