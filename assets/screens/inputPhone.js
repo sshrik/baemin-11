@@ -1,3 +1,4 @@
+import { addEventSubHeaderLeftBtn } from "../components/subheader";
 import * as $ from "../utils/$";
 import { autoFillDash } from "../utils/inputUtils";
 import { throttle } from "../utils/throttle";
@@ -100,8 +101,7 @@ function appendVerifyNumInput(target){
   nextBtn.addEventListener("click", nextStep);
 }
 
-const subHeader = $.qs(".sub-header");
-const headerLeft = $.qs(".header__left", subHeader);
-const aTag = $.qs("a", headerLeft);
-
-aTag.addEventListener("click", () => location.href = '/agreement');
+addEventSubHeaderLeftBtn({
+  event:'click',
+  listener: () => location.href = '/agreement'
+})
