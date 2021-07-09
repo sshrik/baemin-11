@@ -25,8 +25,8 @@ router.post('/signUp', function(req, res, next) {
 
 router.post('/logIn', function(req, res, next) {
   const id = req.body.email;
-  const pw = req.body.password;
-  
+  const pw = req.body.loginPassword;
+  console.log(id, pw);
   auth.logIn(id, pw, (result, resTF) => {
     if(!result.result) {
       res.redirect("/login?email=" + id);
