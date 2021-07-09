@@ -1,7 +1,10 @@
-mixin Input({ name, headerText, placeholder, type = "text" })
+mixin Input({ name, headerText, placeholder, type = "text", value})
   div(class="input-container")
     if headerText
       p(class="header-text") #{headerText}
     div(class="input-container__body")
-      input(name= name, type= type, class="input--not-filled",placeholder= placeholder)
+      if value
+        input(name= name, type= type, class="input--filled", value=value)
+      else
+        input(name= name, type= type, class="input--not-filled", placeholder= placeholder)
       //- span(class="danger-text") danger 문구
