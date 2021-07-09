@@ -27,8 +27,6 @@ for(let i=0; i < checkboxImages.length; i++) {
       let target = e.target;
       checkBoxChecked[checkboxImages[i].id] = toggleSrc(target);
       setSrc(checkBoxImageAll, allCheck());
-      checkBoxChecked.all = (checkboxImages[i].getAttribute("src") === trueCheckBox);
-      console.log(checkBoxChecked);
       checkNext();
     });
   }
@@ -73,7 +71,6 @@ const activeButton = "btn-primary";
 
 function checkNext() {
   let bottomButton = document.getElementsByClassName("btn")[0];
-  console.log(checkAgree() && checkAge());
   if(checkAgree() && checkAge()) {
     if(bottomButton.classList.contains(disabledButton)) {
       bottomButton.classList.remove(disabledButton);
