@@ -13,7 +13,7 @@ function sendData(response, result, resTF) {
   response.send(JSON.stringify(result));
 }
 
-router.post('/signIn', function(req, res, next) {
+router.post('/signUp', function(req, res, next) {
   const id = req.body.id;
   const pw = req.body.pw;
 
@@ -41,7 +41,6 @@ router.post('/logIn', function(req, res, next) {
 
 router.post('/checkDup', function(req, res, next) {
   const id = req.body.id;
-
   auth.checkDuplicate(id, (result, resTF) => {
     sendData(res, result, resTF) 
   });

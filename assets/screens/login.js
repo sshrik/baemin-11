@@ -2,6 +2,7 @@ import * as $ from "../utils/$";
 import * as validator from "../utils/validator";
 import { throttle } from "../utils/throttle";
 import { allInputValid, inputValidEventListener } from "../utils/validInput.js"
+import { addEventSubHeaderLeftBtn } from "../components/subheader";
 
 const form = $.qs('.loginForm');
 const signInBtn = $.qs(".signin-submit");
@@ -49,3 +50,8 @@ const throttledAllInputValid = throttle(200, allInputValid(allInputValidOptions)
 
 email.addEventListener("input", throttledAllInputValid);
 password.addEventListener("input", throttledAllInputValid);
+
+addEventSubHeaderLeftBtn({
+  event:'click',
+  listener: () => location.href = '/'
+});
