@@ -1,0 +1,108 @@
+.emptyPadSpace {
+  width: 100%;
+  height: 255px;
+}
+
+.pad--container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: #c0c0c0;
+  width: 100vw;
+  height: 255px;
+  bottom: 0;
+  left: 0;
+}
+
+.pad--row {
+  width: calc(100% - 10px);
+  height: calc(20% - 5px);
+  margin: 5px 5px 0px 5px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.dial--english{
+  background-color: #fff;
+  width: calc(10% - 5px);
+  height: calc(100% - 5px);
+  border-radius: 5px;
+  margin: 2.5px 2.5px 0px 2.5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.dial--altKey{
+  background-color: #fff;
+  width: calc(15% - 5px);
+  height: calc(100% - 5px);
+  border-radius: 5px;
+  margin: 2.5px 2.5px 0px 2.5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.dial--longAltKey {
+  background-color: #fff;
+  width: calc(20% - 5px);
+  height: calc(100% - 5px);
+  border-radius: 5px;
+  margin: 2.5px 2.5px 0px 2.5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.dial--space {
+  background-color: #fff;
+  width: calc(30% - 5px);
+  height: calc(100% - 5px);
+  border-radius: 5px;
+  margin: 2.5px 2.5px 0px 2.5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.row1 > .dial--english:first-child {
+  margin-left: 0px;
+}
+
+.row2 > .dial--english:first-child {
+  margin-left: 0px;
+}
+
+.row3 > .dial--english:first-child {
+  margin-left: 0px;
+}
+
+.row2--empty-side {
+  height: calc(100% - 5px);
+  margin: 2.5px 2.5px 0px 2.5px;
+}
+
+.dial--english > p {
+  font-size: 20px;
+}
+
+.greyKey {
+  background-color: #999;
+}

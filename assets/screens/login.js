@@ -51,6 +51,11 @@ const throttledAllInputValid = throttle(200, allInputValid(allInputValidOptions)
 email.addEventListener("input", throttledAllInputValid);
 password.addEventListener("input", throttledAllInputValid);
 
+setInterval(() => {
+  allInputValid(allInputValidOptions)({target : email});
+  allInputValid(allInputValidOptions)({target : password});
+}, 200);
+
 addEventSubHeaderLeftBtn({
   event:'click',
   listener: () => location.href = '/'

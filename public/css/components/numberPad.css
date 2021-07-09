@@ -1,0 +1,58 @@
+.pad--container {
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #c0c0c0;
+  width: 100vw;
+  height: 255px;
+  bottom: 0;
+  left: 0;
+}
+
+.numberPad--row {
+  width: calc(100% - 10px);
+  height: calc(20% - 5px);
+  margin: 5px 5px 0px 5px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.numberPad--row:last-child {
+  margin-bottom: 5px;
+}
+
+.numberPad-dial {
+  width: calc(33%);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #FFF;
+  border-radius: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.dial-empty {
+  cursor:auto;
+  background-color: #c0c0c0 ;
+}
+
+.numberPad--row > .numberPad-dial:first-child {
+  margin-left: 0px;
+}
+
+.largeNumber {
+  font-size: 24px;
+}
+
+.smallDetail { 
+  height: 10px;
+  line-height: 10px;
+  font-size: 10px;
+}
