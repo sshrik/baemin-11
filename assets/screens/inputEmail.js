@@ -4,6 +4,7 @@ import { allInputValid, inputValidEventListener, addEventInputBtns } from "../ut
 import { throttle } from "../utils/throttle";
 import * as Tmpl from "../utils/tmpl";
 import { autoFillDot } from "../utils/inputUtils";
+import { addEventSubHeaderLeftBtn } from "../components/subheader";
 
 const email = $.qs("input[name=email]");
 const checkDuplicateBtn = $.qs(".duplicate-btn");
@@ -162,3 +163,8 @@ function appendSignUpForm(){
   }
   finishBtn.addEventListener("click", submitSignUpForm);
 }
+
+addEventSubHeaderLeftBtn({
+  event:'click',
+  listener: () => location.href = '/inputPhone'
+})
