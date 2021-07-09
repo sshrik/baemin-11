@@ -35,12 +35,32 @@ email.addEventListener('input', throttledEmailValid);
 checkDuplicateBtn.addEventListener('click', () => {
   const emailValue = email.value;
   if(!validator.email(emailValue)) return;
-  appendSignUpForm();
+  fetch('/api/checkDup', {
+    method:"POST",
+    headers:{
+      'Content-Type': 'application/json',
+    },
+    body:JSON.stringify({
+      id: emailValue
+    })
+  })
+  .then(res => res.json())
+  .then(({ result, msg }) => {
+    if(result){
+      alert(msg);
+      appendSignUpForm();
+      return;
+    }
+    alert(msg);
+    return;
+  })
+
 })
 
 function appendSignUpForm(){
   const inputEmailContainer = $.qs('#inputEmail__container');
   const inputsContainer = $.createEl("div");
+  if($.qs('.inputEmail__anothor__inputs')) return;
   inputsContainer.classList.add("inputEmail__anothor__inputs")
   const nicknameInputHTML = Tmpl.Input({ 
     name: "nickname", 
@@ -114,9 +134,31 @@ function appendSignUpForm(){
     const container = $.qs(".container");
     const inputs = $.qsa('input', container);
     const inputsValueWithName = [...inputs].map(({ name, value }) => ({ name, value}));
-
     if(!inputsValueWithName.every(({ name, value }) => validator[name] ? validator[name](value) : false)) return;
-    alert("회원가입 완료!");
+    const emailValue = email.value;
+    const password = passwordEl.value;
+    
+    fetch("/api/signUp",{
+      method: "POST",
+      headers:{
+        'Content-type':'application/json',
+      },
+      body: JSON.stringify({
+        id: emailValue,
+        pw: password
+      })
+    })
+    .then(res => res.json())
+    .then(res => {
+      const { result, msg } = res;
+      if(result === "sucess"){
+        alert(msg);
+        location.href = '/login';
+        return;
+      }
+      alert(msg);
+      return;
+    });
   }
   finishBtn.addEventListener("click", submitSignUpForm);
 }
