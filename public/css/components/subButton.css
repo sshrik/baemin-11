@@ -8,9 +8,14 @@
   height: 100%;
   border-style: none;
   background-color: #fff;
-  border: 1px solid #ccc;
 }
 
 .subButton__container > p{
   font-size: 14px;
 }
+
+.subButton__container--active{
+  color: #333;
+  border: 1px solid #333;
+}
+

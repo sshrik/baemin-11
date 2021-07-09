@@ -31,13 +31,17 @@
   border-bottom: 1px solid var(--bright-grey);
 }
 
+.input-container > .input-container__body > .input--danger{
+  border-bottom: 1px solid red;
+}
+
 .input-container > .input-container__body > input:focus{
   color: #333;
   border-bottom: 1px solid #333;
 }
 
 .input-container > .input-container__body > input::placeholder{
-  color: inherit;
+  color: var(--bright-grey);
 }
 
 .input-container > .input-container__body > input::placeholder:focus{
@@ -47,7 +51,25 @@
 .input-container > .input-container__body > .danger-text{
   position: absolute;
   bottom: 0;
-  font-size : 12px;
+  font-size : 11px;
   color: var(--bm-red);
   margin-top: 6px;
+}
+
+.input-container > .input-container__body > .cancleButton, .checkButton{
+  position: absolute;
+}
+
+.input-container > .input-container__body > .cancleButton {
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 0px;
+}
+
+.input-container > .input-container__body > .checkButton {
+  width: 18px;
+  height: 18px;
+  top: 10px;
+  right: 0px;
 }

@@ -1,5 +1,5 @@
 //- buttonCotents : 버튼에 들어갈 내용 문자열
 
-mixin SubButton({ classSelector, content })
-  button(class=`subButton__container ${classSelector}`)
+mixin SubButton({ classSelector, content, isActive=false })
+  button(class=`subButton__container ${classSelector ? classSelector : ''} ${isActive ? 'subButton__container--active' : ''}`)
     p #{content}

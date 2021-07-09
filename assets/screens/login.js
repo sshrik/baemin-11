@@ -6,7 +6,7 @@ import { allInputValid, inputValidEventListener } from "../utils/validInput.js"
 const form = $.qs('.loginForm');
 const signInBtn = $.qs(".signin-submit");
 const email = $.qs('input[name=email]', form);
-const password = $.qs('input[name=password]', form);
+const password = $.qs('input[name=loginPassword]', form);
 
 const checkEmailInput = inputValidEventListener({ validator: validator.email, validDangerText: "올바른 이메일을 입력해주세요." });
 const checkPasswordInput = inputValidEventListener({ validator: (_) => true, validDangerText: "올바른 패스워드를 입력해주세요." });

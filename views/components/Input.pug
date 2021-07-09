@@ -1,9 +1,14 @@
-mixin Input({ name, headerText, placeholder, type = "text", value})
+mixin Input({ name, headerText, placeholder, type = "text", isIcon = false, value })
   div(class="input-container")
     if headerText
       p(class="header-text") #{headerText}
     div(class="input-container__body")
-      if value
+      input(name= name, type= type, class="input--not-filled",placeholder= placeholder)
+      //- span(class="danger-text") danger 문구
+      if isIcon
+        img(src="/resource/cancel.png", alt="cancel button", class="cancleButton nonExist")
+        img(src="/resource/grayCheck.png", data-checked='/resource/mintCheck.png' data-unchecked='/resource/grayCheck.png' alt="Check button", class="checkButton")
+      else if value
         input(name= name, type= type, class="input--filled", value=value)
       else
         input(name= name, type= type, class="input--not-filled", placeholder= placeholder)

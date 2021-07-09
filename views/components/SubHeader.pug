@@ -6,4 +6,4 @@ mixin SubHeader(props)
     div(class="header__center")
       span= props.title
     div(class="header__right")
-      span= props.rightText
+      span(class=`${props.rightBtnClassSelector || ''}`)= props.rightText
