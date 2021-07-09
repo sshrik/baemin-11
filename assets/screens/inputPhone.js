@@ -131,13 +131,12 @@ function appendVerifyNumInput(target){
     })
     .then(res => {
       if(res.status === 200){
-        return res.json();
+        alert("인증 성공!");
+        location.href= '/inputEmail';
+        return;
       }
       alert("올바르지 않은 인증번호입니다. 다시 시도해주세요.");
-    })
-    .then(res => {
-      alert("인증 성공!");
-      location.href= '/inputEmail';
+      return;
     });
   };
 
