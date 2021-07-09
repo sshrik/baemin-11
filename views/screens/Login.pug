@@ -14,6 +14,7 @@ block styles
   link(rel="stylesheet", href="/css/components/input.css")
   link(rel="stylesheet", href="/css/components/button.css")
   link(rel="stylesheet", href="/css/components/socialLoginButton.css")
+  
 block content
   div(class="container")
     +StatusBar()
@@ -26,10 +27,7 @@ block content
     -
     +SubHeader(headerProps)
     div(class="loginScreen__container")
-      if preEmail
-        +LoginForm(preEmail)
-      else
-        +LoginForm()
+      +LoginForm(preEmail)
       div(class="loginScreen__social__container")
         +SocialLoginContainer()
         div(class="signUp__container")
