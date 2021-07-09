@@ -19,6 +19,7 @@ block styles
   link(rel="stylesheet", href="/css/components/socialLoginButton.css")
   link(rel="stylesheet", href="/css/components/englishPad.css")
   link(rel="stylesheet", href="/css/components/numberPad.css")
+  
 block content
   div(class="container")
     +StatusBar()
@@ -31,7 +32,7 @@ block content
     -
     +SubHeader(headerProps)
     div(class="loginScreen__container")
-      +LoginForm()
+      +LoginForm(preEmail)
       div(class="loginScreen__social__container")
         +SocialLoginContainer()
         div(class="signUp__container")

@@ -4,6 +4,7 @@ include ../components/SubHeader.pug
 include ../components/LoginForm.pug
 include ../components/TextButton.pug
 include ../components/CheckInput.pug
+include ../components/Input.pug
 include ../components/SubButton.pug
 
 include ../components/EnglishPad.pug
@@ -16,6 +17,7 @@ block styles
   link(rel="stylesheet", href="/css/components/subheader.css")
   link(rel="stylesheet", href="/css/components/textButton.css")
   link(rel="stylesheet", href="/css/components/checkInput.css")
+  link(rel="stylesheet", href="/css/components/input.css")
   link(rel="stylesheet", href="/css/components/subButton.css")
   link(rel="stylesheet", href="/css/components/englishPad.css")
   link(rel="stylesheet", href="/css/components/numberPad.css")
@@ -26,18 +28,19 @@ block content
       const headerProps = {
         leftSrc: '/resource/arrow-back.svg',
         title: '회원가입',
-        rightText: '완료'
+        rightText: '완료',
+        rightBtnClassSelector: 'finish-btn'
       }
     -
     +SubHeader(headerProps)
     div(id="inputEmail__container")
       div(id="inputEmail__inputButtonContainer")
         div(id="inputEmail__inputButtonContainer__left")
-          +CheckInput("이메일", "이메일을 입력해주세요")
+          +Input({ name: "email", headerText: "이메일", placeholder: "이메일을 입력해주세요", isIcon: true })
         div(id="inputEmail__inputButtonContainer__right")
           div(id="inputEmail__inputButtonContainer__right--blank")
           div(id="inputEmail__subButtonContainer")
-            +SubButton("중복확인")
+            +SubButton({ classSelector: "duplicate-btn", content: "중복확인" })
       +CheckInput("닉네임", "닉네임을 입력해주세요")
       +CheckInput("비밀번호", "비밀번호를 입력해주세요", "10자 이상 영어 대문자, 소문자, 숫자, 특수문자 중 2종류를 조합해야 합니다")
       +CheckInput("생년월일", "예) 2000.01.01")
@@ -46,4 +49,5 @@ block content
 
 
 block scripts 
+  script(src="/js/inputEmail.js") 
   script(src="/js/dial.js")

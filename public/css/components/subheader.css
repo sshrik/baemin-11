@@ -30,8 +30,10 @@
 
 .sub-header > .header__right{
   justify-content: flex-end;
+  color: var(--bright-grey);
 }
 
-/* .header__right > .active{}
-
-.header__right > .disable{} */
+.sub-header > .header__right > .active{
+  color: #333;
+  cursor:pointer;
+}

@@ -6,12 +6,14 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const livereload = require("livereload");
 const { bundle } = require("./webpack");
+var expressSession = require('express-session');
 
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const agreementRouter = require("./routes/agreement");
 const inputPhoneRouter = require("./routes/inputPhone");
 const inputEmailRouter = require("./routes/inputEmail");
+const apiRouter = require("./routes/api");
 
 const app = express();
 
@@ -38,6 +40,12 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(expressSession({
+  secret: '2@ad!!da',
+  resave: false,
+  saveUninitialized:true
+}));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
@@ -45,6 +53,7 @@ app.use('/login', loginRouter);
 app.use('/inputPhone', inputPhoneRouter);
 app.use('/inputEmail', inputEmailRouter);
 app.use('/agreement', agreementRouter);
+app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

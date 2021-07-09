@@ -2,11 +2,15 @@ include TextButton.pug
 include Button.pug
 include Input.pug
 
-mixin LoginForm()
+mixin LoginForm(preEmail)
     div(class="loginForm__container")
-        form(action="/signin", class="loginForm", method="POST")
-            +Input({ name: 'email', placeholder: '아이디 또는 이메일' })
-            +Input({ name: 'password', placeholder: '비밀번호', type: "password" })
+        form(action="/api/logIn", class="loginForm", method="POST")
+            if preEmail
+                +Input({ name: 'email', placeholder: '아이디 또는 이메일', type:'text', value: preEmail })
+                +Input({ name: 'loginPassword', placeholder: '비밀번호', type: "password" })
+            else
+                +Input({ name: 'email', placeholder: '아이디 또는 이메일'})
+                +Input({ name: 'loginPassword', placeholder: '비밀번호', type: "password" })
         +Button("primary", "lg", "로그인", 'signin-submit')
         div(class="finder__container")
             +TextButton("아이디 찾기", "gray")
