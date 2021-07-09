@@ -1,0 +1,17 @@
+//-
+//- type : facebook, naver, apple 3종류의 string.
+//-
+
+mixin SocialLoginButton(type)
+  if type === "facebook"
+    - var imgSrc="/resource/facebook-logo.png"
+    - var loginWith="페이스북으로 로그인"
+  else if type === "naver"
+    - var imgSrc="/resource/naver-logo.png"
+    - var loginWith="네이버로 로그인"
+  else if type === "apple"
+    - var imgSrc="/resource/apple-logo.png"
+    - var loginWith="Appple로 로그인"
+  button(class="socialLoginButton__container")
+    img(src=imgSrc, alt="logo image")
+    p #{loginWith}

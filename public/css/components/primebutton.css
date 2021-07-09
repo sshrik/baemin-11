@@ -1,0 +1,19 @@
+.primeButton__container {
+  width: 100%;
+  height: 48px;
+  border-style: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.primeButton__container > p {
+  color: #fff;
+}
+
+.primeButton-active {
+  background-color: var(--bm-mint);
+}
+
+.primeButton-nonActive {
+  background-color: var(--bm-gray);
+}

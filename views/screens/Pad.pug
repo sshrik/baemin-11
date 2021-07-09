@@ -1,0 +1,25 @@
+extends ../Layout.pug
+include ../components/StatusBar.pug
+include ../components/SubHeader.pug
+include ../components/EnglishPad.pug
+include ../components/NumberPad.pug
+
+block styles 
+    link(rel="stylesheet", href="/css/components/statusbar.css")
+    link(rel="stylesheet", href="/css/components/subheader.css")
+    link(rel="stylesheet", href="/css/components/englishPad.css")
+    link(rel="stylesheet", href="/css/components/numberPad.css")
+    
+block content
+    div(class="container")
+        +StatusBar()
+        -
+            const header = {
+                leftSrc: '/resource/close.svg',
+                goto: '/login',
+                title: '회원가입',
+                rightText: ''
+            }
+        +SubHeader(header)
+    +NumberPad()
+block scripts

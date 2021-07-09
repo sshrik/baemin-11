@@ -16,20 +16,24 @@
   display: flex;
   align-items: center;
   font-size: 24px;
+  cursor: pointer;
 }
 
-.sub-header > .header__left > img{
+.sub-header > .header__left > a > img{
   width: 1em;
 }
 
 .sub-header > .header__center{
   justify-content: center;
+  font-weight: 600;
 }
 
 .sub-header > .header__right{
   justify-content: flex-end;
+  color: var(--bright-grey);
 }
 
-/* .header__right > .active{}
-
-.header__right > .disable{} */
+.sub-header > .header__right > .active{
+  color: #333;
+  cursor:pointer;
+}

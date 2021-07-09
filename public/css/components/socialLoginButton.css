@@ -1,0 +1,20 @@
+.socialLoginButton__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #FFF;
+  border-style: none;
+  cursor: pointer;
+  border: 1px solid #777;
+  margin-top: 10px;
+  margin-bottom: 10px
+}
+
+.socialLoginButton__container > img {
+  width: 24px;
+  height: 24px;
+  margin: 8px 8px 8px 0px;
+}

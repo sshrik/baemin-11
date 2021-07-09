@@ -1,0 +1,53 @@
+extends ../Layout.pug
+include ../components/StatusBar.pug
+include ../components/SubHeader.pug
+include ../components/CheckboxItem.pug
+include ../components/RadioItem.pug
+include ../components/Button.pug
+
+block title
+    title 약관동의화면
+
+block styles 
+    link(rel="stylesheet", href="/css/screens/agreement.css")
+    link(rel="stylesheet", href="/css/components/statusbar.css")
+    link(rel="stylesheet", href="/css/components/subheader.css")
+    link(rel="stylesheet", href="/css/components/checkboxitem.css")
+    link(rel="stylesheet", href="/css/components/radioitem.css")
+    link(rel="stylesheet", href="/css/components/button.css")
+    
+block content
+    div(class="container")
+        +StatusBar()
+        -
+            const header = {
+                leftSrc: '/resource/close.svg',
+                goto: '/login',
+                title: '회원가입',
+                rightText: ''
+            }
+        +SubHeader(header)
+        div(class="agreementScreen__container")
+            div
+                div(class="h1-description")
+                    h1 어서오세요
+                    h1 약관동의가 필요해요
+            
+                div(class="checkbox-container")
+                    div(class="checkbox-header")
+                        +Checkbox({id: 'all', name: 'all', label: '전체동의', isIcon: false, optionalClass: "checkBox__title"})
+                    div(class="checkbox-list")
+                        +Checkbox({id: 'agree1', name: 'agree1', label: '배달의민족 이용약관 동의', isIcon: true, optionalClass: "checkBox__subTitle"})
+                        +Checkbox({id: 'agree2', name: 'agree2', label: '전자금융거래 이용약관 동의', isIcon: true, optionalClass: "checkBox__subTitle"})
+                        +Checkbox({id: 'agree3', name: 'agree3', label: '개인정보 이용약관 동의', isIcon: true, optionalClass: "checkBox__subTitle"})
+                        +Checkbox({id: 'agree4', name: 'agree4', label: '개인정보 제3자 제공 동의(선택)', isIcon: true, optionalClass: "checkBox__subTitle"})
+                        +Checkbox({id: 'agree5', name: 'agree5', label: '마케팅 정보 메일, SMS 수신동의(선택)', isIcon: false, optionalClass: "checkBox__subTitle"})
+            
+                div(class="radio-container")
+                    +Radio('radio1', 'age', 'up')
+                    +Radio('radio2', 'age', 'down')
+            div(class="btn-container")
+                +Button('primary', 'lg', '다음으로')
+            
+block scripts
+    script(src="/js/agreement.js")

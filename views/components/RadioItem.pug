@@ -1,6 +1,3 @@
-mixin Radio(id, name, description, subDescription)
+mixin Radio(id, name, suffix)
   div(class="radio-item")
-    input(type="radio", name= name, id= id)/
-    label(for= id)
-      span(class="desc")= description
-      span(class="sub-desc")= subDescription
+    label(class= `radio__label radio__label__${suffix}`, id= id, for= id)

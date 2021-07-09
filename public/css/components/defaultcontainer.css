@@ -1,0 +1,72 @@
+.default-container{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--default-border-color);
+  height: 70px;
+  padding: 0px var(--default-px);
+}
+
+.default-container > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.default-container > .container__left{
+  display: flex;
+  justify-content: center;
+}
+
+.default-container > .container__left > .left__img{
+  font-size: 24px;
+  margin-right: 12px;
+}
+
+.default-container > .container__left > .left__img > img{
+  width: 2em;
+}
+
+.default-container > .container__left > .left__text{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1em;
+}
+
+.default-container > .container__left > .left__text > .left__desc{
+  display: flex;
+  align-items: center;
+}
+
+.default-container > .container__left > .left__text > .left__sub-desc{
+  margin-top: 5px;
+  font-size: var(--sub-desc-size);
+  color: var(--sub-desc-default-color);
+}
+
+.default-container > .container__right{
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.default-container > .container__right > a > img{
+  width: 0.8em;
+}
+
+.default-container > .container__right > img{
+  width: 0.8em;
+}
+
+.new-chip{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 9px;
+  height: 18px;
+  padding: 5px 5px;
+  margin: 0px 5px;
+  margin-left: 10px;
+  border-radius: 14px;
+  color: #fff;
+  background-color: var(--bm-purple);
+}

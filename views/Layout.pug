@@ -9,6 +9,7 @@ html(lang="en")
         block styles
         block title
     body
-    div(class="container")
         block content
     block scripts
+    if env && env.NODE_ENV === 'dev'
+        script(src="//localhost:35729/livereload.js?snipver=1", async, defer)

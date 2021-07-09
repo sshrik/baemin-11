@@ -1,0 +1,45 @@
+#inputEmail__container {
+  width: 100%;
+  height: calc(100% - 94px);
+  padding-left: 6px
+}
+
+#inputEmail__inputButtonContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#inputEmail__inputButtonContainer__left {
+  width: calc(100% - 92px);
+  margin-right: 12px;
+}
+
+#iinputEmail__inputButtonContainer__right {
+  width: 80px;
+}
+
+#inputEmail__inputButtonContainer__right--blank {
+  width: 80px;
+  height: calc(100% - 61px);
+}
+
+#inputEmail__subButtonContainer {
+  width: 80px;
+  height: 36px;
+}
+
+#inputEmail__buttonContainer {
+  width: 100%;
+  height: 36px;
+  margin-top: 36px;
+}
+
+#inputEmail__textButtonContainer {
+  width: 100%;
+  height: 14px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 36px;
+}

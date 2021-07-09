@@ -1,3 +1,12 @@
 :root{
   --default-px: 14px;
+  --default-border-color: #efefef;
+  --bright-grey: #dfdfdf;
+  --sub-desc-size: 13px;
+  --sub-desc-default-color: #9C9C9C;
+  --bm-red: #F24A39;
+  --bm-mint: #2ac1bc;
+  --bm-gray: #ccc;
+  --bm-green: #5DAB22;
+  --bm-purple: #EC0D89;
 }

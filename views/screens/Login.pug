@@ -1,21 +1,47 @@
+extends ../Layout.pug
+include ../components/StatusBar.pug
 include ../components/SubHeader.pug
 include ../components/LoginForm.pug
 include ../components/TextButton.pug
 include ../components/SocialLoginContainer.pug
 
-doctype html
-head 
-    style
-        include ../../public/css/global.css
-        include ../../public/css/login.css
-        include ../../public/css/components/textButton.css
-body 
-    div(class="class1" id="phone__container")
-        div(id="phone__statusBar")
-            p status-bar area
-        +SubHeader()
-        +LoginForm()
+include ../components/EnglishPad.pug
+include ../components/NumberPad.pug
+
+block styles
+  link(rel="stylesheet", href="/css/screens/login.css")
+  link(rel="stylesheet", href="/css/components/statusbar.css")
+  link(rel="stylesheet", href="/css/components/subheader.css")
+  link(rel="stylesheet", href="/css/components/textButton.css")
+  link(rel="stylesheet", href="/css/components/loginForm.css")
+  link(rel="stylesheet", href="/css/components/input.css")
+  link(rel="stylesheet", href="/css/components/button.css")
+  link(rel="stylesheet", href="/css/components/socialLoginButton.css")
+  link(rel="stylesheet", href="/css/components/englishPad.css")
+  link(rel="stylesheet", href="/css/components/numberPad.css")
+  
+block content
+  div(class="container")
+    +StatusBar()
+    -
+      const headerProps = {
+        leftSrc: '/resource/close.svg',
+        title: '',
+        rightText: ''
+      }
+    -
+    +SubHeader(headerProps)
+    div(class="loginScreen__container")
+      +LoginForm(preEmail)
+      div(class="loginScreen__social__container")
         +SocialLoginContainer()
-        div(id="signUp__container")
-            p 혹시, 배달의 민족이 처음이신가요?
-            +TextButton("회원가입")
+        div(class="signUp__container")
+          p 혹시, 배달의 민족이 처음이신가요?
+          a(href="/agreement")
+            +TextButton("회원가입", "mint")
+  +EnglishPad()
+  +NumberPad()
+
+block scripts
+  script(src="/js/login.js")
+  script(src="/js/dial.js")

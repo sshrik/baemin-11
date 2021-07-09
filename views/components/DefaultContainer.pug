@@ -1,0 +1,29 @@
+//- props - default item의 설정을 담은 값
+//-   leftSrc - defaultItem의 왼쪽에 존재하는 Img의 src
+//-   description - 주 내용
+//-   subDescription - 서브 내용
+//-   descriptionStyle - 주 내용 스타일 값
+//-     - font-size : 글씨 크기
+//-     - color : 글자색
+//-     - font-weight : 굵기
+//-   isNew - new chip의 표기 여부
+//-   onClick : click 시 일어나는 이벤트 작성
+
+mixin DefaultContainer(props)
+  div(class="default-container")
+    div(class="container__left")
+      if props.leftSrc
+        div(class="left__img")
+          img(src= props.leftSrc)
+      div(class="left__text")
+        span(class="left__desc", style= props.descriptionStyle)
+          = props.description
+          if props.isNew
+            span(class="new-chip") NEW
+        span(class="left__sub-desc")= props.subDescription 
+    div(class="container__right")
+      if props.clickHref 
+        a(href=props.clickHref)
+          img(src="/resource/chevron-forward.svg", alt="chevron-forward")
+      else 
+        img(src="/resource/chevron-forward.svg", alt="chevron-forward")

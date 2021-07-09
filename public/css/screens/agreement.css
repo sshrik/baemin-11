@@ -1,13 +1,22 @@
+.agreementScreen__container{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: calc(100% - 94px);
+}
+
 .h1-description{
   padding: 24px 0;
 }
 
 .h1-description > h1{
   font-size:24px;
+  font-weight: 600;
 }
 
 .checkbox-header{
-  padding: 8px 0;
+  padding: 2px 0;
 }
 
 .checkbox-list{
@@ -16,9 +25,6 @@
 }
 
 .btn-container{
-  position: absolute;
   width:100%;
-  padding: 24px var(--default-px); 
-  left:0;
-  bottom: 0;
+  margin-bottom: 24px;
 }
