@@ -49,11 +49,14 @@ function setRandomNumber(req) {
 }
 
 function authNumbering(req, authKey, next) {
-  const authInfor = req.session.auth[req.session["bm-cookie"]];
+  const authInfor = req.session.auth[req.cookies["bm-cookie"]];
+  console.log(req.session);
+  console.log(authInfor);
+  console.log(authKey);
 
   if(authInfor.auth === authKey) {
     if(Date.now() - authInfor.timer < 30 * 1000) { 
-      delete req.session.auth[req.session["bm-cookie"]];
+      delete req.session.auth[req.cookies["bm-cookie"]];
       next({
         result: "success",
         msg: "Authenticate success!"
@@ -81,7 +84,7 @@ function genRandomNumber() {
     randomNumberString += Math.floor(Math.random() * 10).toString();
   }
 
-  return randomNumberString;
+  return randomNumberString.slice(0, 4);
 }
 
 module.exports = {
