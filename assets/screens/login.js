@@ -19,7 +19,7 @@ function submitForm(){
   const emailValue = email.value;
   const passwordValue = password.value;
   if(!(emailValue && password)) return;
-  if(validator.email(emailValue) && validator.password(passwordValue)){
+  if(validator.email(emailValue) && validator.loginPassword(passwordValue)){
     form.submit();
     return;
   }
