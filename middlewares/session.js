@@ -50,9 +50,6 @@ function setRandomNumber(req) {
 
 function authNumbering(req, authKey, next) {
   const authInfor = req.session.auth[req.cookies["bm-cookie"]];
-  console.log(req.session);
-  console.log(authInfor);
-  console.log(authKey);
 
   if(authInfor.auth === authKey) {
     if(Date.now() - authInfor.timer < 30 * 1000) { 
